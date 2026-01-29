@@ -1,19 +1,21 @@
+
+
 import numpy as np 
 
-
 def convert_to_floats(rows):
-    """convert a list of string tuples to a  ndarray of floats"""
+    """convert a list of string tuples to a ndarray of floats"""
 
-    # create a a result list ( later to be converted to np array matrix)
+    # قائمة فارغة لتخزين النتائج
     result = []
-    # To-Do Loop through the list and convert row by row
-    # a loop should be written 
+    
+    # الـ To-Do: يجب كتابة جملة الـ for هنا لتمري على كل سطر (row)
+    for row in rows:
+        # تحويل السطر لمصفوفة numpy
+        value = np.asarray(row)
+        # تحويل نوع البيانات لأرقام عشرية
+        value = value.astype(float)
+        # إضافة السطر للنتائج
+        result.append(value)
 
-       value = np.asarray(row)
-       value = value.astype(np.float)
-
-       result.append(value)  # Vstack means we are adding a row
-
+    # تحويل القائمة النهائية لمصفوفة numpy كاملة (Matrix)
     return np.array(result)
-
-
